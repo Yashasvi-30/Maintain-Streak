@@ -2,33 +2,33 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '30 16 * * *'  # Runs at 10:00 pm IST daily 16:30 UTC
+    - cron: '30 15 * * *'  # Runs every day at 10:00 PM IST (15:30 UTC)
 
 jobs:
-  commit:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Update to the latest version
 
       - name: Set up Git
         run: |
-          git config --global user.name 'Yashasvi Gupta'
-          git config --global user.email 'Yashasvi30gupta@gmail.com'
+          git config --global user.name "Yashasvi-30"
+          git config --global user.email "yashasvi30gupta@gmail.com"
 
-      - name: Create commit file from template
+      - name: Create daily commit file
         run: |
-          mkdir -p "daily_commits"
-          DATE=$(date '+%Y-%m-%d %H:%M:%S')
-          FILE_NAME="commit_$(date '+%Y-%m-%d_%H-%M-%S').txt"
-          COMMIT_MESSAGE="Commit by Yashasvi Gupta on $DATE"
-          cp templates/commit_template.txt "daily_commits/$FILE_NAME"
-          echo "$COMMIT_MESSAGE" >> "daily_commits/$FILE_NAME"
-          git add "daily_commits/$FILE_NAME"
-          git commit -m "$COMMIT_MESSAGE"
+          mkdir -p daily-commits
+          FILE_NAME="daily-commits/commit_$(date +'%Y-%m-%d_%H-%M-%S').txt"
+          echo "Author: Yashasvi Gupta" > $FILE_NAME
+          echo "Username: Yashasvi-30" >> $FILE_NAME
+          echo "Date: $(date)" >> $FILE_NAME
 
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        run: |
+          git add daily-commits/
+          git commit -m "Daily commit on $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Ensure this token is available
