@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '30 16 * * *'  # Runs at midnight UTC daily
+    - cron: '30 16 * * *'  # Runs at 10:00 pm IST daily 16:30 UTC
 
 jobs:
   commit:
