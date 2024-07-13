@@ -46,13 +46,18 @@ To contribute to this project, follow these steps:
 
 Please note that this project follows the [Code of Conduct](CODE_OF_CONDUCT.md). All contributors are expected to adhere to this code. Any behavior that violates the code will not be tolerated and may result in your contributions being rejected or removed.
 
-## Reporting Issues
 
-If you encounter any issues while using Daily Commit Automation, such as bugs or unexpected behavior, please report them using the [GitHub Issue Tracker](https://github.com/your-username/daily-commit-automation/issues). Provide detailed information about the problem, including steps to reproduce it and your environment setup.
+---
+
+## Issue Reporting
+
+If you encounter any issues while using Daily Commit Automation, such as bugs or unexpected behavior, please report them using the [GitHub Issue Tracker](https://github.com/Yashasvi-30/Maintain-Streak/issues). Please include detailed information about the problem, steps to reproduce it, and your environment setup.
 
 ## Communication
 
-For further questions or discussions about contributing to this project, feel free to reach out to the project maintainers via [email](mailto:project@example.com) or [GitHub Discussions](https://github.com/your-username/daily-commit-automation/discussions).
+For further questions or discussions about contributing to this project, feel free to reach out to the project maintainers via [email](mailto:yashasvi30gupta@gmail.com) or [GitHub Discussions](https://github.com/Yashasvi-30/Maintain-Streak/discussions).
+
+---
 
 ## Attribution
 
