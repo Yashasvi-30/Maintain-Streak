@@ -28,38 +28,36 @@ The SRS document provides a detailed technical specification for the project. It
 
 ---
 
+## Detailed Working
 
+### How It Works
+1. **Triggering the Workflow**:
+   - The GitHub Actions workflow is scheduled to run daily at a specified time. The schedule is defined using cron syntax in the `daily-commit.yml` file.
 
-Detailed Working
+2. **Generating the File**:
+   - Each day, the workflow generates a new text file within the `daily_commits` directory. The file is named with the current date and contains the following information:
+     - Author name: Yashasvi Gupta
+     - Username: Yashasvi-30
+     - Commit timestamp
 
-How It Works
-Triggering the Workflow:
+3. **Committing the File**:
+   - After generating the file, the workflow commits it to the repository with a commit message that includes the current date and time.
 
-The GitHub Actions workflow is scheduled to run daily at a specified time. The schedule is defined using cron syntax in the daily-commit.yml file.
-Generating the File:
+4. **Maintaining the Streak**:
+   - By ensuring a new file is committed to the repository each day, the workflow helps maintain an active GitHub streak, showcasing consistent activity.
 
-Each day, the workflow generates a new text file within the daily_commits directory. The file is named with the current date and contains the following information:
-Author name: Yashasvi Gupta
-Username: Yashasvi-30
-Commit timestamp
-Committing the File:
+### Key Components
+- **GitHub Actions Workflow**:
+  - The core of the automation is the GitHub Actions workflow defined in `.github/workflows/daily-commit.yml`.
+  - It uses the following key actions:
+    - `actions/checkout@v2`: Checks out the repository.
+    - `actions/setup-node@v2`: Sets up the Node.js environment.
+    - `actions/commit@v2`: Commits the new file to the repository.
 
-After generating the file, the workflow commits it to the repository with a commit message that includes the current date and time.
-Maintaining the Streak:
+- **Scheduled Cron Job**:
+  - The workflow uses a cron schedule to trigger the daily job. This ensures the automation runs at the same time each day, maintaining consistency.
 
-By ensuring a new file is committed to the repository each day, the workflow helps maintain an active GitHub streak, showcasing consistent activity.
-Key Components
-GitHub Actions Workflow:
-
-The core of the automation is the GitHub Actions workflow defined in .github/workflows/daily-commit.yml.
-It uses the following key actions:
-actions/checkout@v2: Checks out the repository.
-actions/setup-node@v2: Sets up the Node.js environment.
-actions/commit@v2: Commits the new file to the repository.
-Scheduled Cron Job:
-
-The workflow uses a cron schedule to trigger the daily job. This ensures the automation runs at the same time each day, maintaining consistency.
-
+---
 
 
 ## Detailed Description
