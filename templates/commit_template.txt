@@ -1,1 +1,4 @@
 
+This is a daily commit template.
+Author: Yashasvi Gupta
+Username: Yashasvi-30
