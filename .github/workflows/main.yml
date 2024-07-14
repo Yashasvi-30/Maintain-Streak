@@ -19,15 +19,15 @@ jobs:
 
       - name: Create daily commit file
         run: |
-          mkdir -p daily-commits
-          FILE_NAME="daily-commits/commit_$(date +'%Y-%m-%d_%H-%M-%S').txt"
+          mkdir -p daily_commits
+          FILE_NAME="daily_commits/commit_$(date +'%Y-%m-%d_%H-%M-%S').txt"
           echo "Author: Yashasvi Gupta" > $FILE_NAME
           echo "Username: Yashasvi-30" >> $FILE_NAME
           echo "Date: $(date)" >> $FILE_NAME
 
       - name: Commit changes
         run: |
-          git add daily-commits/
+          git add daily_commits/
           git commit -m "Daily commit on $(date +'%Y-%m-%d %H:%M:%S')"
           git push
         env:
